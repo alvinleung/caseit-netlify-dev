@@ -28,8 +28,8 @@
 
 @font-face {
   font-family: "DINPro";
-  src: url("./fonts/DINPro-Bold.woff2") format("woff2"),
-    url("./fonts/DINPro-Bold.woff") format("woff");
+  src: url("DINPro-Bold.woff2") format("woff2"),
+    url("DINPro-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: fallback;
@@ -37,8 +37,8 @@
 
 @font-face {
   font-family: "DINPro";
-  src: url("./fonts/DINPro-Regular.woff2") format("woff2"),
-    url("./fonts/DINPro-Regular.woff") format("woff");
+  src: url("DINPro-Regular.woff2") format("woff2"),
+    url("DINPro-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: fallback;

@@ -1,0 +1,96 @@
+/* 
+ *
+ * Content
+ * 
+ *  - Color
+ *  - Fonts
+ *  - screen sizes
+ *
+ */
+
+$useRoundedCorner: false;
+
+:root {
+  /* 
+    Colours
+  */
+
+  /* Reference - https://fixate.it/blog/make-your-css-variable-names-suck-less */
+
+  /* clr = colour */
+  --color-accent-lighter: rgb(255, 118, 118);
+  --color-accent: rgb(196, 52, 52);
+  --color-accent-darker: rgb(129, 34, 46);
+  --color-accent-darkest: rgb(114, 31, 42);
+
+  --color-primary-lightest: rgb(255, 255, 255);
+  --color-primary-lighter: rgb(237, 237, 237);
+  --color-primary-light: rgb(139, 139, 139);
+  --color-primary-dark: rgb(57, 54, 54);
+  --color-primary-darker: rgb(37, 34, 34);
+  --color-primary-darkest: rgb(0, 0, 0);
+
+  /* ff = font family */
+  --typeface-body: "Roboto", sans-serif;
+  --typeface-interactive: "DINPro", sans-serif;
+  --typeface-header: "DINPro", sans-serif;
+  --typeface-caption: "Roboto Mono", sans-serif;
+
+  /* 
+   * ====================
+   * Font paramaters 
+   * ====================
+   */
+
+  /* SIZE */
+  --type-size-display: 6rem;
+  --type-size-h1: 4rem;
+  --type-size-h2: 3rem;
+  --type-size-h3: 2.125rem;
+  --type-size-h4: 1.25rem;
+  --type-size-lead: 1.5rem;
+  --type-size-body: 16px;
+  --type-size-body-small: 0.875rem;
+  --type-size-button: 0.875rem;
+  --type-size-caption: 0.75rem;
+
+  /* TRACKING - relateive to font size */
+  --type-tracking-display: -0.05em;
+  --type-tracking-h1: -0.02em;
+  --type-tracking-h2: 0.02em;
+  --type-tracking-h3: 0.02em;
+  --type-tracking-h4: 0.05em;
+  --type-tracking-lead: -0.025em;
+  --type-tracking-body: 0.02em;
+  --type-tracking-body-small: 0.02em;
+  --type-tracking-button: 0.08em;
+
+  /* LEADING - relative to font size */
+  --type-leading-display: 1em;
+  --type-leading-h1: 1em;
+  --type-leading-h2: 1em;
+  --type-leading-h3: 1em;
+  --type-leading-h4: 1.5em;
+  --type-leading-lead: 34px;
+  --type-leading-body: 24px;
+  --type-leading-body-small: 20px;
+
+  /* 
+   *
+   * Shadow Utilities
+   * 
+   */
+  --drop-shadow-dark: 0px 15px 25px rgba(0, 0, 0, 0.25);
+  --drop-shadow-light: 0px 15px 25px rgba(0, 0, 0, 0.1);
+
+  /* 
+   *
+   * Image tint utility
+   * 
+   */
+  --image-gradient-tint: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 80%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

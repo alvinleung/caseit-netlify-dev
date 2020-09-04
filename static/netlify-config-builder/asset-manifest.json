@@ -1,0 +1,7 @@
+{
+  "main.css": "/static/css/main.css",
+  "main.js": "/static/js/bundle.js",
+  "_redirects": "/_redirects",
+  "index.html": "/index.html",
+  "static/media/dog-call.svg": "/static/media/2a297ecf388bc2fc5ac59c963fc69e62-dog-call.svg"
+}

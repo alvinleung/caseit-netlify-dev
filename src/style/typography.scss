@@ -1,0 +1,336 @@
+/* 
+ *
+ * Content
+ * 
+ * Typography for
+ *  - Header 1 - 4
+ *  - Body
+ *  - lead
+ *  - caption
+ *  - Interactive elements
+ */
+
+@import "./breakpoints";
+
+/* 
+ Inspired the bootstrap type system
+ https: //getbootstrap.com/docs/4.3/content/typography/#headings
+
+ Old Material Design typography styles
+ https: //material.io/archive/guidelines/style/typography.html#typography-other-typographic-guidelines
+ */
+
+:root {
+  /* 
+   * We want each header to stick closer together in to make header group layout easier
+   */
+  --header-spacing-top: 0rem;
+  --header-spacing-bottom: 1rem;
+  /* 
+   * We want each paragraph to be a distinct entity, so they have larger spacing of 2rem
+   */
+  --paragraph-spacing-top: 2rem;
+  --paragraph-spacing-bottom: 2rem;
+  /* 
+   * We want the caption to belong to something above, so 
+   */
+  --caption-spacing-top: 1rem;
+  --caption-spacing-bottom: 2rem;
+
+  /* 
+   * We want the caption to belong to something above, so 
+   */
+  --overline-spacing-top: 1rem;
+  --overline-spacing-bottom: 1rem;
+}
+
+// line height crop mixin
+// https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
+@mixin lineHeightCrop($line-height) {
+  &::before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+/* 
+ * FOR HEADLINES AND DISPLAY
+ */
+
+.display {
+  font-family: var(--typeface-header);
+  letter-spacing: var(--type-tracking-display);
+  line-height: var(--type-leading-display);
+  font-weight: bold;
+  margin-top: var(--header-spacing-top);
+  margin-bottom: var(--header-spacing-bottom);
+
+  // font size only be that big on huge viewport
+  font-size: var(--type-size-h1);
+  @include viewportLargerThan($breakpoint-m) {
+    font-size: var(--type-size-display);
+  }
+}
+
+.header-article {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+h1,
+.h1 {
+  font-family: var(--typeface-header);
+  font-size: var(--type-size-h1);
+  letter-spacing: var(--type-tracking-h1);
+  line-height: var(--type-leading-h1);
+  font-weight: bold;
+  margin-top: var(--header-spacing-top);
+  margin-bottom: var(--header-spacing-bottom);
+}
+
+.h1--responsive {
+  font-size: 48px;
+  @include viewportLargerThan($breakpoint-m) {
+    font-size: var(--type-size-h1);
+  }
+}
+
+h2,
+.h2 {
+  font-family: var(--typeface-header);
+  font-size: var(--type-size-h2);
+  letter-spacing: var(--type-tracking-h2);
+  line-height: var(--type-leading-h2);
+  font-weight: bold;
+  margin-top: var(--header-spacing-top);
+  margin-bottom: var(--header-spacing-bottom);
+}
+
+.h2--accented {
+  &::before {
+    content: "";
+    display: block;
+    border-top: 8px solid var(--color-accent);
+    width: 3rem;
+    height: 2px;
+
+    padding-bottom: 1rem;
+    // background-color: var(--color-accent);
+  }
+}
+
+.h2--responsive {
+  font-size: 32px;
+  @include viewportLargerThan($breakpoint-m) {
+    font-size: var(--type-size-h2);
+  }
+}
+
+h3,
+.h3 {
+  font-family: var(--typeface-header);
+  font-size: var(--type-size-h3);
+  letter-spacing: var(--type-tracking-h3);
+  line-height: var(--type-leading-h3);
+  font-weight: bold;
+  margin-top: var(--header-spacing-top);
+  margin-bottom: var(--header-spacing-bottom);
+}
+
+.h3--accented {
+  color: var(--color-accent);
+}
+
+h4,
+.h4 {
+  font-family: var(--typeface-header);
+  font-size: var(--type-size-h4);
+  letter-spacing: var(--type-tracking-h4);
+  line-height: var(--type-leading-h4);
+  font-weight: bold;
+  margin-top: var(--header-spacing-top);
+  margin-bottom: var(--header-spacing-bottom);
+  text-transform: uppercase;
+}
+
+.h4--accented {
+  color: var(--color-accent);
+}
+
+/* 
+ * FOR BODY COPY TEXT
+ */
+p,
+.body,
+body {
+  font-family: var(--typeface-body);
+  font-size: var(--type-size-body);
+  letter-spacing: var(--type-tracking-body);
+  line-height: var(--type-leading-body);
+  font-weight: normal;
+}
+
+p,
+.body {
+  margin-top: var(--paragraph-spacing-top);
+  margin-bottom: var(--paragraph-spacing-bottom);
+  /* 
+   * prevent lines going too wide to enhance readability
+   */
+  max-width: 40rem;
+}
+
+.body--small {
+  font-size: var(--type-size-body-small);
+  letter-spacing: var(--type-tracking-body-small);
+  line-height: var(--type-leading-body-small);
+  font-weight: normal;
+  margin-top: var(--paragraph-spacing-top);
+  margin-bottom: var(--paragraph-spacing-bottom);
+}
+
+/* 
+ * FOR OTHER TYPOGRAPHIC ELEMENTS - eg CAPTIONS, LEAD, CALL OUT BOX
+ */
+
+/* 
+  Make a paragraph stand out by adding .lead
+*/
+.lead {
+  font-family: var(--typeface-header);
+  font-size: var(--type-size-lead);
+  letter-spacing: var(--type-tracking-lead);
+  line-height: var(--type-leading-lead);
+  font-weight: normal;
+  margin-top: var(--paragraph-spacing-top);
+  margin-bottom: var(--paragraph-spacing-bottom);
+}
+
+.caption {
+  font-family: var(--typeface-caption);
+  font-size: var(--type-size-caption);
+  letter-spacing: var(--type-tracking-caption);
+  line-height: var(--type-leading-caption);
+  /* font-weight: normal; */
+  margin-top: var(--caption-spacing-top);
+  margin-bottom: var(--caption-spacing-bottom);
+}
+
+.overline {
+  font-family: var(--typeface-caption);
+  font-size: var(--type-size-caption);
+  letter-spacing: var(--type-tracking-caption);
+  line-height: var(--type-leading-caption);
+  /* font-weight: normal; */
+  margin-top: var(--overline-spacing-top);
+  margin-bottom: var(--overline-spacing-bottom);
+}
+
+.drop-cap > *:first-child:first-letter,
+.drop-cap:first-child:first-letter {
+  // color: #903;
+  float: left;
+  font-size: 80px;
+
+  line-height: 60px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-left: 0px;
+}
+
+.button-text {
+  font-family: var(--typeface-interactive);
+  font-size: var(--type-size-button);
+  letter-spacing: var(--type-tracking-button);
+
+  font-weight: bold;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  text-align: center; // center align for <a>
+  line-height: normal; // reset line height for <a>
+  background-image: none;
+}
+
+/* 
+  Interactive Typography
+*/
+
+a {
+  display: inline-block;
+
+  /* https://cssanimation.rocks/animating-links/ */
+  color: var(--color-primary-light);
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  /* transition: none cubic-bezier(0.19, 1, 0.22, 1) 0.3s; */
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 0.3s;
+  transition-property: background-size color;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  background-size: 100% 100%;
+  color: var(--color-primary-lightest);
+}
+
+a:active {
+  opacity: 0.7;
+}
+
+a.inactive {
+  text-decoration: line-through;
+}
+
+.link-reset {
+  background-image: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--color-primary-darker);
+  }
+}
+
+/* code {
+
+  font-family: "Roboto Mono";
+  display: block;
+  background-color: #EEE;
+  padding: 1rem 1rem;
+  font-size: 14px;
+} */
+
+.signiture {
+  &__name {
+    @extend .h4;
+    margin-bottom: 0.5rem;
+  }
+
+  &__position {
+    margin-bottom: 2rem;
+  }
+
+  &__image {
+    max-width: 15rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.emphasized {
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-accent);
+}
+
+.foot-notes {
+  opacity: 0.5;
+}
