@@ -22,13 +22,92 @@
   <header class="full-width content-block">
     <h1 class="display">Hello Welcome!</h1>
     <p class="lead">Tools and resources for CaseIT Design/Development team</p>
-
-    <img src="img/teamphoto.jpg" alt="caseit marketing team">
   </header>
   <section class="full-width">
-    <h2>Dev tools</h2>
-    <a href="/netlify-config-builder">Netlify Config Builder</a>
+    <div class="content-block">
+      <h2>Dev Tools</h2>
+      <h4>Netlify CMS Dev Tools</h4>
+      <a href="/netlify-config-builder">Netlify Config Builder</a>
+    </div>
   </section>
+  <section class="content-block full-width">
+    <h2>Colour Scheme</h2>
+    <p>Click to copy color code</p>
+
+    <h3 class="h4">Primary</h3>
+    <div class="color-swatch-container">
+      <div class="color-swatch" style="background-color: #ffffff; color: #000000;">
+        <span class="material-icons">content_copy</span>
+        <span>#FFFFFF</span>
+      </div>
+      <div class="color-swatch" style="background-color: #393636;">
+        <span class="material-icons">content_copy</span>
+        <span>#393636</span>
+      </div>
+      <div class="color-swatch" style="background-color: #252222;">
+        <span class="material-icons">content_copy</span>
+        <span>#252222</span>
+      </div>
+      <div class="color-swatch" style="background-color: #000000;">
+        <span class="material-icons">content_copy</span>
+        <span>#000000</span>
+      </div>
+    </div>
+
+    <h3 class="h4">Accent</h3>
+    <div class="color-swatch-container">
+      <div class="color-swatch" style="background-color: #c43434;">
+        <span class="material-icons">content_copy</span>
+        <span>#C43434</span>
+      </div>
+      <div class="color-swatch" style="background-color: #81222e;">
+        <span class="material-icons">content_copy</span>
+        <span>#81222E</span>
+      </div>
+      <div class="color-swatch" style="background-color: #721f2a;">
+        <span class="material-icons">content_copy</span>
+        <span>#721F2A</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Material Design icons -->
+  <!-- 
+
+      Material Design Icons browser
+      https://material.io/resources/icons/
+
+    -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style type="text/css">
+    .material-icons {
+      font-size: 1.2em;
+      /* 
+         * fix the vertical alignment issue of material icons 
+         *
+         * https://github.com/google/material-design-icons/issues/206
+         */
+      display: inline-flex;
+      vertical-align: middle;
+    }
+  </style>
+
+  <script type="text/javascript">
+    document.querySelectorAll(".color-swatch").forEach((elm) => {
+      elm.addEventListener("click", (e) => {
+        let copyText = document.createElement("input");
+        copyText.type = "input";
+        document.body.append(copyText);
+
+        copyText.value = e.currentTarget.querySelector("span:nth-child(2)").innerHTML;
+        copyText.select();
+        document.execCommand("copy");
+        copyText.remove();
+      });
+    });
+  </script>
+  </section>
+
 </body>
 
 </html>

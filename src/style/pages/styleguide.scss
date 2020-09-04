@@ -1,0 +1,30 @@
+.color-swatch-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 1rem 0 2rem;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.color-swatch {
+  flex-basis: 10rem;
+  height: 10rem;
+
+  padding-left: 1rem;
+  padding-top: 1rem;
+  flex-grow: 1;
+
+  color: var(--color-primary-lightest);
+  background-color: var(--color-primary-darkest);
+}
+
+.color-swatch:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.color-swatch:active {
+  cursor: pointer;
+  opacity: 1;
+}
