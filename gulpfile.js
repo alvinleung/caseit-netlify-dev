@@ -10,9 +10,9 @@ sass.compiler = require("node-sass");
 // YARN DEV
 // =========================================
 gulp.task("dev", function () {
-  gulp.watch("./src/style/*.scss", gulp.series("sass"));
-  gulp.watch("./src/script/*.js", gulp.series("js"));
-  gulp.watch("./static/*", gulp.series("copy-static"));
+  gulp.watch("./src/style/**/*.scss", gulp.series("sass"));
+  gulp.watch("./src/script/**/*.js", gulp.series("js"));
+  gulp.watch("./static/**/*", gulp.series("copy-static"));
 });
 
 // =========================================
