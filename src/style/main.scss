@@ -3,6 +3,22 @@
 @import "./typography.scss";
 @import "./layout.scss";
 @import "./card.scss";
+@import "./button.scss";
+@import "./reset.scss";
 
 // for individual pages
 @import "./pages/styleguide.scss";
+
+// main styles
+.tool-card {
+  max-width: 25rem;
+  margin-top: 4rem;
+
+  img {
+    margin-bottom: 2rem;
+  }
+
+  &:hover {
+    // background-color: rgba(0, 0, 0, 0.1);
+  }
+}

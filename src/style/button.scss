@@ -1,0 +1,146 @@
+/* 
+*
+* Content
+ * 
+ * Buttons
+ *  - Primary Button Styling
+ *  - Secondary Button Styling
+ */
+
+@import "variables";
+// $useRoundedCorner:false;
+
+.button-primary,
+.button-secondary {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+  text-align: center; // center align for <a>
+  line-height: normal; // reset line height for <a>
+
+  // reset the css link background rule
+  background-image: none;
+
+  font-family: var(--typeface-interactive);
+  font-size: var(--type-size-button);
+
+  letter-spacing: var(--type-tracking-button);
+  font-weight: bold;
+  text-transform: uppercase;
+
+  border: 2px solid transparent;
+
+  @if ($useRoundedCorner==true) {
+    border-radius: 0.25em;
+  }
+
+  transition-property: box-shadow, background-color, border;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* handling the color */
+.button-primary {
+  background-color: var(--color-primary-darkest);
+  color: var(--color-primary-lightest);
+  box-shadow: 0 0.2em 0.3em rgba(54, 54, 54, 0.5);
+}
+
+.button-primary:active,
+.button-secondary:active {
+  background-color: var(--color-primary-dark);
+}
+
+/* for button tag pointer fix */
+.button-primary:hover,
+.button-secondary:hover {
+  cursor: pointer;
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  /* css box shadow https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+  /* drop shadow vs box shadow https://css-tricks.com/breaking-css-box-shadow-vs-drop-shadow/ */
+  box-shadow: 0 0.2em 0.5em rgba(54, 54, 54, 0.6);
+  outline: none;
+}
+
+.button-secondary,
+.button-secondary:hover {
+  color: var(--color-primary-darkest);
+  border-color: var(--color-primary-darkest);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.button-secondary:active {
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.button-secondary:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-primary-dark);
+  outline: none;
+}
+
+/* 
+ * 
+ * Inverted style
+ * 
+ */
+
+.button-primary--inverted {
+  background-color: var(--color-primary-lightest);
+  color: var(--color-primary-darkest);
+  box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.2);
+    color: var(--color-primary-darkest);
+  }
+
+  &:active,
+  &:focus {
+    background-color: var(--color-primary-lighter);
+    color: var(--color-primary-darkest);
+  }
+}
+
+.button-secondary--inverted,
+.button-secondary--inverted:hover {
+  border-color: var(--color-primary-lightest);
+  color: var(--color-primary-lightest);
+}
+
+// disabled state
+.button-primary--disabled {
+  background-color: var(--color-primary-lighter);
+  color: var(--color-primary-light);
+
+  box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.15);
+
+  cursor: not-allowed;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: var(--color-primary-lighter);
+    color: var(--color-primary-light);
+    box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.15);
+
+    cursor: not-allowed;
+    // color: unset;
+  }
+}
+
+// stretch
+.button--stretch {
+  width: 100%;
+  margin-right: 0rem;
+}
